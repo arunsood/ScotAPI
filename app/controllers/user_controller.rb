@@ -1,0 +1,39 @@
+class UserController < ApplicationController
+
+	def index
+	end
+
+	def show
+		user = User.find(params[:id])
+		render :json => user
+	end
+
+	def create
+		new_user = User.new
+
+		new_user.username = params[:username]
+		new_user.password = params[:password]
+		
+		if new_user.save
+			render :json => new_user
+		end
+	end
+
+	def update
+		user = User.find(params[:id])
+
+		user.username = params[:username]
+		user.password = params[:password]
+		
+		if user.save
+			render :json => user
+		end
+	end
+
+	def destroy
+		if User.destroy(params[:id])
+			render :text => "ok"
+		end
+	end
+
+end
