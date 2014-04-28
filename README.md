@@ -3,8 +3,6 @@ API Usage
 
 There are two use cases for this API - manage users and retrieve and manage user locations.
 
-## Manage Users
-
 Create a New User
 =================
 
