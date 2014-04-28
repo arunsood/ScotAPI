@@ -1,7 +1,7 @@
 API Usage
 =========
 
-There are two use cases for this API - manage users and retrieve and manage user locations.
+There are two use cases for this API - manage users and retrieve and manage user locations. API can be found at `http://54.187.144.176`
 
 Create a New User
 =================
