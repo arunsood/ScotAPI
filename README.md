@@ -26,7 +26,7 @@ Delete a User
 Create a New Location Entry
 ===========================
 
-`POST` request to `/location` sending the parameters `latitude`, `longitude`, `user_id_s`, `user_id_r` where user_id_s is the id of the sending user and user_id_r is the recipient id
+`POST` request to `/location` sending the parameters `latitude`, `longitude`, `user_id`
 
 Search for Location Entry
 =========================
