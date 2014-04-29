@@ -13,6 +13,11 @@ Update a User
 
 `PUT` request to `/user/:id` sending the parameters `username` and `password`
 
+Authenticate a User
+===================
+
+`POST` request to `/user/auth` sending the parameters `username` and `password`. It will send back a text saying "none" if no user is found, else it will send back text saying "ok" if a user is found.
+
 Delete a User
 =================
 

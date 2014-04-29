@@ -9,7 +9,7 @@ class UserController < ApplicationController
 		if user == nil
 			render :text => "none"
 		else
-			render :json => user
+			render :text => "ok"
 		end
 	end
 
