@@ -16,7 +16,7 @@ Update a User
 Authenticate a User
 ===================
 
-`POST` request to `/user/auth` sending the parameters `username` and `password`. It will send back a text saying "none" if no user is found, else it will send back text saying "ok" if a user is found.
+`POST` request to `/user/auth` sending the parameters `username` and `password`. It will send back a text saying "none" if no user is found, else it will send back a JSON object with the user's id.
 
 Delete a User
 =================
@@ -31,7 +31,7 @@ Create a New Location Entry
 Search for Location Entry
 =========================
 
-`GET` request to `/search/:id`
+`GET` request to `/search/:id` where id is the user id
 
 Delete a Location Entry
 =======================

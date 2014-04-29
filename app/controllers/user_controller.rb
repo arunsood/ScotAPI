@@ -4,12 +4,12 @@ class UserController < ApplicationController
 	end
 
 	def auth
-		user = User.where(username: params[:username]).where(password: params[:password]).first
+		user = User.select("id").where(username: params[:username]).where(password: params[:password]).first
 
 		if user == nil
 			render :text => "none"
 		else
-			render :text => "ok"
+			render :json => user
 		end
 	end
 
