@@ -9,7 +9,7 @@ class LocationController < ApplicationController
 	def create
 		location = Location.new
 
-		location.user_id_s = params[:user_id]
+		location.user_id = params[:user_id]
 		location.latitude = params[:latitude]
 		location.longitude = params[:longitude]
 
