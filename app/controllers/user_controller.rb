@@ -3,9 +3,14 @@ class UserController < ApplicationController
 	def index
 	end
 
-	def show
-		user = User.find(params[:id])
-		render :json => user
+	def auth
+		user = User.where(username: params[:username]).where(password: params[:password]).first
+
+		if user == nil
+			render :text => "none"
+		else
+			render :json => user
+		end
 	end
 
 	def create

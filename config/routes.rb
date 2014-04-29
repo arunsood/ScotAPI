@@ -12,6 +12,8 @@ ScotAPI::Application.routes.draw do
   get '/search/r/:id' => 'location#search_r'
   get '/search/s/:id' => 'location#search_s'
 
+  post 'user/auth' => 'user#auth'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
