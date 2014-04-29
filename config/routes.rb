@@ -9,8 +9,7 @@ ScotAPI::Application.routes.draw do
 
   resources :location
 
-  get '/search/r/:id' => 'location#search_r'
-  get '/search/s/:id' => 'location#search_s'
+  get '/search/:id' => 'location#search'
 
   post 'user/auth' => 'user#auth'
 
