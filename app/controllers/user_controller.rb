@@ -14,13 +14,19 @@ class UserController < ApplicationController
 	end
 
 	def create
-		new_user = User.new
+		user = User.where(username: params[:username]).where(password: params[:password]).first
 
-		new_user.username = params[:username]
-		new_user.password = params[:password]
-		
-		if new_user.save
-			render :json => new_user
+		if user != nil
+			render :json => '"error":"User already exists"'
+		else
+			new_user = User.new
+
+			new_user.username = params[:username]
+			new_user.password = params[:password]
+			
+			if new_user.save
+				render :json => new_user
+			end
 		end
 	end
 
