@@ -7,6 +7,8 @@ class LocationController < ApplicationController
 	end
 
 	def create
+		Location.delete_all(:user_id => params[:user_id])
+
 		location = Location.new
 
 		location.user_id = params[:user_id]
