@@ -1,12 +1,24 @@
 class LocationController < ApplicationController
 
 	def search
-		location = Location.where(user_id: params[:id]).first
+		Time.zone = "America/Los_Angeles"
+		
+		location = Location.where(user_id: params[:id]).first.try(:as_json)
+
+		username = User.select("username").find(params[:id]).username
+
+		location["username"] = username
+
+		time_f = location["created_at"].strftime("%B %d, %Y %-I:%M %p")
+
+		location["formatted_time"] = time_f
 
 		render :json => location
 	end
 
 	def create
+		Time.zone = "America/Los_Angeles"
+
 		Location.delete_all(:user_id => params[:user_id])
 
 		location = Location.new
