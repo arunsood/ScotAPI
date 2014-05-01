@@ -2,10 +2,10 @@ class LocationController < ApplicationController
 
 	def search
 		Time.zone = "America/Los_Angeles"
-		
+
 		location = Location.where(user_id: params[:id]).first.try(:as_json)
 
-		username = User.select("username").find(params[:id]).username
+		username = User.find(params[:id]).username
 
 		location["username"] = username
 
