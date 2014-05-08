@@ -4,7 +4,7 @@ class LocationController < ApplicationController
 		locations = Location.all.as_json
 
 		locations.each do |location|
-			username = User.find(location.user_id).try(:username)
+			username = User.find(location["user_id"]).try(:username)
 			if username != nil
 				location["username"] = username
 			end
