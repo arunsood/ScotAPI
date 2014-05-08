@@ -4,8 +4,10 @@ class LocationController < ApplicationController
 		locations = Location.all.as_json
 
 		locations.each do |location|
-			username = User.find(location.user_id).username
-			location["username"] = username
+			username = User.find(location.user_id).try(:username)
+			if username != nil
+				location["username"] = username
+			end
 		end
 
 		render :json => locations
