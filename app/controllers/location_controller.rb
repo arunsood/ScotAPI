@@ -7,6 +7,10 @@ class LocationController < ApplicationController
 			username = User.find(location["user_id"]).try(:username)
 			if username != nil
 				location["username"] = username
+
+				time_f = location["created_at"].strftime("%B %d, %Y %-I:%M %p")
+
+				location["formatted_time"] = time_f
 			end
 		end
 
