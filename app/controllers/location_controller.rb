@@ -1,7 +1,14 @@
 class LocationController < ApplicationController
 
 	def all
-		render :json => Location.all
+		locations = Location.all.as_json
+
+		locations.each do |location|
+			username = User.find(location.user_id).username
+			location["username"] = username
+		end
+
+		render :json => locations
 	end
 
 	def search
