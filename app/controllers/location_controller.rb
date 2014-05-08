@@ -1,5 +1,9 @@
 class LocationController < ApplicationController
 
+	def all
+		render :json => Location.all
+	end
+
 	def search
 		Time.zone = "America/Los_Angeles"
 
